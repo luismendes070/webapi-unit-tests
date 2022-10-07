@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamespaceDemo", "NamespaceDemo\NamespaceDemo.csproj", "{C5A71781-7C2E-4ED9-8951-F4FC2E20B214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet6Console", "DotNet6Console\DotNet6Console.csproj", "{72BD9A81-8FF1-4004-B8A2-C358C8DCCB48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5A71781-7C2E-4ED9-8951-F4FC2E20B214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A71781-7C2E-4ED9-8951-F4FC2E20B214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A71781-7C2E-4ED9-8951-F4FC2E20B214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A71781-7C2E-4ED9-8951-F4FC2E20B214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BD9A81-8FF1-4004-B8A2-C358C8DCCB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BD9A81-8FF1-4004-B8A2-C358C8DCCB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BD9A81-8FF1-4004-B8A2-C358C8DCCB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BD9A81-8FF1-4004-B8A2-C358C8DCCB48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08082751-4472-4237-871B-F49F5D849A7E}
+	EndGlobalSection
+EndGlobal
