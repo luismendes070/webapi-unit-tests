@@ -8,6 +8,7 @@ namespace ModuloAPI.Models
 {
     public class Usuario
     {
+
         public Usuario()
         {
             services.AddMvc();
