@@ -1,4 +1,4 @@
-using JsonPatchDocument;
+// using JsonPatch.JsonPatchDocument;
 using ModuloAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,32 +8,8 @@ using System.Threading.Tasks;
 
 namespace ModuloAPI.Controllers
 {
-    Venda[] vendas = new Venda[]
-    {
-        new Venda
-        {
-            Id = 1,
-            Name = "Tomato Soup",
-            Category = "Groceries",
-            Price = 1
-        },
-        new Venda
-        {
-            Id = 2,
-            Name = "Yo-yo",
-            Category = "Toys",
-            Price = 3.75M
-        },
-        new Venda
-        {
-            Id = 3,
-            Name = "Hammer",
-            Category = "Hardware",
-            Price = 16.99M
-        }
-    };
 
-    private static readonly string[] STATUS = new[]
+    private static readonly string[] STATUS = new string[]
     {
         "Aguardando Pagamento",
         "Pagamento Aprovado",
@@ -142,6 +118,31 @@ namespace ModuloAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<Venda> GetVenda(int id)
         {
+            Venda[] vendas = new Venda[]
+            {
+                new Venda
+                {
+                    Id = 1,
+                    Name = "Tomato Soup",
+                    Category = "Groceries",
+                    Price = 1
+                },
+                new Venda
+                {
+                    Id = 2,
+                    Name = "Yo-yo",
+                    Category = "Toys",
+                    Price = 3.75M
+                },
+                new Venda
+                {
+                    Id = 3,
+                    Name = "Hammer",
+                    Category = "Hardware",
+                    Price = 16.99M
+                }
+            };
+
             var venda = vendas.FirstOrDefault((p) => p.Id == id);
             if (venda == null)
             {
