@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace ModuloAPI.Controllers
 {
 
+    private readonly AgendaContext _context;
+
     private static readonly string[] STATUS = new string[]
     {
         "Aguardando Pagamento",
@@ -21,8 +23,11 @@ namespace ModuloAPI.Controllers
     [Route("[controller]")]
     public class VendaController : ControllerBase
     {
-        public VendaController()
+        public VendaController(AgendaContext context)
         {
+
+            _context = context;
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -42,13 +47,38 @@ namespace ModuloAPI.Controllers
             app.Run();
         }
 
+        [HttpPost]
+        public IActionResult Create(Venda venda)
+        {
+            _context.Add(venda);
+            _context.SaveChanges();
+            return Ok(venda);
+        }
+
+        
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<string>> OperacaoRegistarVenda()
+        public IActionResult ObterPorId(int id)
+        {
+            var venda = _context.Vendas.Find(id);
+            
+            if( venda == null)
+                 return NotFound();
+
+            return Ok(venda);
+        } // end method
+
+// venda.STATUS[0]
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<string>> OperacaoRegistarVenda(int id)
         {
             Venda venda = new Venda();
-            return venda.STATUS[0];
+            _context.SaveChanges();
+            return Ok(_context)
+            // return venda.STATUS[0];
         } // end method
 
         [HttpGet("{id}")]
@@ -77,7 +107,7 @@ namespace ModuloAPI.Controllers
                 return NotFound();
 
             vendaUpdates.ApplyTo(venda);
-            return noContent();
+            return NoContent();
         } // end method
 
         // https://learn.microsoft.com/pt-br/aspnet/core/migration/webapi?view=aspnetcore-6.0&tabs=visual-studio
