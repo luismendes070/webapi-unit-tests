@@ -1,3 +1,4 @@
+using JsonPatchDocument;
 using ModuloAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
