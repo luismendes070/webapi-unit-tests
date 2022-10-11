@@ -12,5 +12,9 @@ namespace ModuloAPI.Controllers
     public class AtualizacaoStatusPagamentoController : ControllerBase
     {
 
+        public AtualizacaoStatusPagamentoController()
+        {
+            
+        }
     }
 }
