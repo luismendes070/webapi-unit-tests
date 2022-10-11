@@ -1,4 +1,5 @@
 // using JsonPatch.JsonPatchDocument;
+using ModuloAPI.Context;
 using ModuloAPI.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -96,12 +97,12 @@ namespace ModuloAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> OperacaoAtualizarVenda(
             string id,
-            JsonPatchDocument<Venda> vendaUpdates
+            Venda vendaUpdates
         )
         {
             // Updating data with JsonPatch [13 of 18] | Web APIs for Beginners https://youtu.be/2MDlJRa4iHs
 
-            var venda = await _vendaData.GetVendaById(id);
+            var venda = await _context._vendaData.Find(id);
 
             if (venda == null)
                 return NotFound();
