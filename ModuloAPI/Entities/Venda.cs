@@ -14,9 +14,13 @@ namespace ModuloAPI.Entities
     public class Venda
     {
         private int _id {get; set;}
+        private string _status {get; set;}
 
         public Venda()
         {
+            
+            setStatus(STATUS[0]);
+
             services.AddMvc();
 
             services.AddSwaggerGen(c =>
@@ -28,6 +32,8 @@ namespace ModuloAPI.Entities
         public Venda(int id)
         {
             _id = id;
+
+            setStatus(STATUS[0]);
             
             services.AddMvc();
 

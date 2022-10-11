@@ -107,7 +107,7 @@ namespace ModuloAPI.Controllers
             if (venda == null)
                 return NotFound();
 
-            venda.    
+            venda = new Venda(id);
 
             vendaUpdates.ApplyTo(venda);
             return NoContent();
