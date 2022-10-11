@@ -76,9 +76,9 @@ namespace ModuloAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<string>> OperacaoRegistarVenda(int id)
         {
-            Venda venda = new Venda();
+            Venda venda = new Venda(id);
             _context.SaveChanges();
-            return Ok(_context)
+            return Ok(venda);
             // return venda.STATUS[0];
         } // end method
 
